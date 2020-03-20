@@ -1,0 +1,182 @@
+body {
+  background-color: whitesmoke;
+}
+
+/* MAKE A DIV ROTATE AROUND A ROUND AXE STARTER KIT ::
+You need : 
+- An axe 
+- A div which plays the role of satellite
+
+First : Make a round axe 
+- Position relative
+- Equal height & width 
+
+Second : Make a satellite
+- Position absolute 
+
+Third : Place the satellite in the exact middle of the axe
+- Top + left 50%
+- margin : -0.9em
+
+Fourth : Transform time. To put a satellite along the axe : 
+- transform : rotate(desired angle) (translate(Width of the axe/2) rotate (-desired angle);
+
+Fifth : Make that satellite rotate 
+- do your keyframe 
+- 100% = transform : rotate ([360deg - the desired angle of the fourth step])translate(Width of axe/2) rotate ([the opposite value of the first rotation]);
+*/
+
+/* Keyframes*/
+
+  /*Main*/
+
+@keyframes rotate-lightcoral
+{
+  0% {}
+  100% { transform : rotate(-180deg)translate(7.5em) rotate(180deg)}
+}
+
+@keyframes rotate-white 
+{
+  0% {}
+  100% { transform : rotate(-270deg)translate(7.5em) rotate(270deg)}
+}
+
+/*Intermediate*/
+
+@keyframes rotate-wain 
+{
+  0% {opacity : 100%}
+  50% {opacity : 20%; background-color: tomato}
+  100% {background-color: rgb(131, 39, 69); transform : rotate(-200deg)translate(5em) rotate(200deg)}
+}
+
+@keyframes rotate-blueviolet 
+{
+  0% {opacity : 100%}
+  50% {opacity : 20%; background-color: grey;}
+  100% {  background-color: blueviolet; transform : rotate(-0deg)translate(5em) rotate(0deg)}
+}
+
+/*Small*/
+
+@keyframes rotate-yellow 
+{
+  0% {opacity : 100%}
+  50% {opacity : 20%; background-color: darkslategray}
+  100% { opacity: 100%; background-color: yellow; transform : rotate(-270deg)translate(2.5em) rotate(270deg)}
+}
+@keyframes rotate-green 
+{
+  0% {opacity : 100%}
+  50% {opacity : 20%; background-color: green}
+  100% { opacity: 100%; background-color: darkslategray; transform : rotate(-190deg)translate(2.5em) rotate(190deg)}
+}
+
+/* Planets*/
+.planet 
+{
+  position: relative;
+  border-radius: 50%;
+}
+.main-planet 
+{
+  border: 1px solid tan;
+  height: 15em;
+  width: 15em;
+  box-shadow: 35px 0px 166px -6px lightsteelblue;
+  background-color: gainsboro;
+}
+
+.intermediate-planet 
+{
+  height: 10em;
+  width: 10em;
+  top: 40%;
+  box-shadow: 10px 10px 20px 12px tan;
+  border: 3px solid tan;
+  background-color: white;
+  opacity: 92%;
+}
+
+.small-planet 
+{
+  height: 5em;
+  width: 5em;
+  top: -38%;
+  left: 25%;
+  background-color: tan;
+  box-shadow: 13px 1px 34px 14px aliceblue;
+  opacity: 90%;
+}
+
+/* Satellite */
+
+.satellite 
+{
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  margin: -0.9em;
+}
+
+/* Main */
+/* .satellite-main 
+{
+}  */
+
+.satellite-main-white 
+{
+  transform: rotate(90deg) translate(7.5em) rotate(-90deg);
+  background-color: white;
+  animation: rotate-white 10s 0s infinite linear;
+}
+
+.satellite-main-lightcoral  
+{
+  transform: rotate(180deg) translate(7.5em) rotate(-180deg);
+  background-color: lightcoral;
+  animation: rotate-lightcoral 15s 0s infinite linear;
+}
+
+/* Intermediate */
+/* .satellite-intermediate 
+{
+} */
+
+.satellite-intermediate-wain 
+{
+  transform: rotate(160deg) translate(5em) rotate(-160deg);
+  background-color: rgb(131, 39, 69);
+  animation : rotate-wain 8s 0s infinite linear reverse;
+}
+
+.satellite-intermediate-blueviolet  
+{
+  transform: rotate(360deg) translate(5em) rotate(-360deg);
+  background-color: blueviolet;
+  animation :rotate-blueviolet 12s 0s infinite linear;
+}
+
+/* Small */
+/* .satellite-small
+{
+} */
+
+.satellite-small-yellow
+{
+    transform: rotate(90deg) translate(2.5em) rotate(-90deg);
+    background-color: yellow;
+    animation :rotate-yellow 4s 0s infinite linear reverse;
+}
+
+.satellite-small-green 
+{
+    transform: rotate(170deg) translate(2.5em) rotate(-170deg);
+    background-color: darkslategray;
+    animation :rotate-green 4s 0s infinite linear alternate-reverse;
+}
